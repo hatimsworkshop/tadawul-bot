@@ -19,12 +19,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install gspread yfinance google-auth pandas
+          pip install gspread oauth2client requests
 
-      - name: Run trading script
+      - name: Run trading bot
         env:
           GOOGLE_CREDS_JSON: ${{ secrets.GOOGLE_CREDS_JSON }}
         run: |
           python bot.py
-
-  
